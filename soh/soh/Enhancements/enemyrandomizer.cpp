@@ -326,6 +326,11 @@ bool IsEnemyAllowedToSpawn(int16_t sceneNum, int8_t roomNum, EnemyEntry enemy) {
     // Bari - Spawns 3 more enemies, potentially extremely difficult in timed rooms.
     bool enemiesToExcludeTimedRooms = enemiesToExcludeClearRooms || enemy.id == ACTOR_EN_VALI;
 
+    bool enemiesToExcludeBecauseAnnoying = enemy.id == ACTOR_EN_CLEAR_TAG;
+    if (enemiesToExcludeBecauseAnnoying) {
+        return 0;
+    }
+
     switch (sceneNum) {
         // Deku Tree
         case SCENE_YDAN:
