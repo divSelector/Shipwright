@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD 20 CACHE STRING "The C++ standard to use")
 
 set (BUILD_UTILS OFF CACHE STRING "no utilities")
 set (BUILD_SHARED_LIBS OFF CACHE STRING "install/link shared instead of static libs")
+set (BUILD_CROWD_CONTROL OFF)
 
 ################################################################################
 # Set target arch type if empty. Visual studio solution generator provides it.
