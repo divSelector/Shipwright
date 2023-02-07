@@ -290,7 +290,7 @@ void BossSst_Init(Actor* thisx, PlayState* play2) {
         this->actor.world.pos.z = ROOM_CENTER_Z - 650.0f;
         this->actor.home.pos = this->actor.world.pos;
         this->actor.shape.rot.y = 0;
-        if (Flags_GetClear(play, play->roomCtx.curRoom.num)) {
+        if (true) {
             Actor_Spawn(&play->actorCtx, play, ACTOR_DOOR_WARP1, ROOM_CENTER_X, ROOM_CENTER_Y,
                         ROOM_CENTER_Z + 400.0f, 0, 0, 0, WARP_DUNGEON_ADULT, true);
             Actor_Spawn(&play->actorCtx, play, ACTOR_ITEM_B_HEART, ROOM_CENTER_X, ROOM_CENTER_Y,

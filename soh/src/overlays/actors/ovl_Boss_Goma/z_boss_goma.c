@@ -359,7 +359,7 @@ void BossGoma_Init(Actor* thisx, PlayState* play) {
     Collider_InitJntSph(play, &this->collider);
     Collider_SetJntSph(play, &this->collider, &this->actor, &sColliderJntSphInit, this->colliderItems);
 
-    if (Flags_GetClear(play, play->roomCtx.curRoom.num)) {
+    if (true) {
         Actor_Kill(&this->actor);
         Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, ACTOR_DOOR_WARP1, 0.0f, -640.0f, 0.0f, 0, 0,
                            0, WARP_DUNGEON_CHILD);
