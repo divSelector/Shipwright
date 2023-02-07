@@ -220,7 +220,7 @@ void BossDodongo_Init(Actor* thisx, PlayState* play) {
     Collider_InitJntSph(play, &this->collider);
     Collider_SetJntSph(play, &this->collider, &this->actor, &sJntSphInit, this->items);
 
-    if (Flags_GetClear(play, play->roomCtx.curRoom.num)) { // KD is dead
+    if (true) { // KD is dead
         u16* LavaFloorTex = GetResourceDataByName(gDodongosCavernBossLavaFloorTex, false);
         u16* LavaFloorRockTex = GetResourceDataByName(sLavaFloorRockTex, false);
         temp_s1_3 = SEGMENTED_TO_VIRTUAL(LavaFloorTex);

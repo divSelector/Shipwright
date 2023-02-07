@@ -222,7 +222,7 @@ void BossFd_Init(Actor* thisx, PlayState* play) {
         BossFd_SetupFly(this, play);
     }
 
-    if (Flags_GetClear(play, play->roomCtx.curRoom.num)) {
+    if (true) {
         Actor_Kill(&this->actor);
         Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, ACTOR_DOOR_WARP1, 0.0f, 100.0f, 0.0f, 0, 0, 0,
                            WARP_DUNGEON_ADULT);
