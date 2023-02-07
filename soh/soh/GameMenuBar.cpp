@@ -377,6 +377,8 @@ namespace GameMenuBar {
                     "to the guard next to the gate.");
                     UIWidgets::PaddedEnhancementCheckbox("Faster Farore's Wind", "gFastFarores", true, false);
                     UIWidgets::Tooltip("Greatly decreases cast time of Farore's Wind magic spell.");
+                    UIWidgets::PaddedEnhancementCheckbox("Skip Boss Fights", "gSkipBossFights", true, false);
+                    UIWidgets::Tooltip("Skip non-endgame boss fights.");
                     ImGui::EndMenu();
                 }
 

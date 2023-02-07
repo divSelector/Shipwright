@@ -366,7 +366,7 @@ void BossMo_Init(Actor* thisx, PlayState* play2) {
         Actor_SetScale(&this->actor, 0.01f);
         Collider_InitCylinder(play, &this->coreCollider);
         Collider_SetCylinder(play, &this->coreCollider, &this->actor, &sCylinderInit);
-        if (true) {
+        if (Flags_GetClear(play, play->roomCtx.curRoom.num) || CVarGetInteger("gSkipBossFights", 0)) {
             Actor_Kill(&this->actor);
             Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, ACTOR_DOOR_WARP1, 0.0f, -280.0f, 0.0f, 0,
                                0, 0, WARP_DUNGEON_ADULT);
