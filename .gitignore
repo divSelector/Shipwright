@@ -448,3 +448,6 @@ _deps
 */extract_assets_cmake*
 /build*
 build.c
+
+Randomizer/*
+*.bak
