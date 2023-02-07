@@ -453,6 +453,19 @@ void BossGanon_Init(Actor* thisx, PlayState* play2) {
             Collider_SetCylinder(play, &this->collider, thisx, &sLightBallCylinderInit);
         }
     }
+
+    // Skip Ganon
+    if (CVarGetInteger("gSkipBossFights", 0)) {
+        // This code is repeated in BossGanon_UpdateDamage which is not ideal.
+        BossGanon_SetupDeathCutscene(this, play);
+        Audio_PlayActorSound2(&this->actor, NA_SE_EN_GANON_DEAD);
+        Audio_PlayActorSound2(&this->actor, NA_SE_EN_GANON_DD_THUNDER);
+        func_80078914(&sZeroVec, NA_SE_EN_LAST_DAMAGE);
+        Audio_QueueSeqCmd(0x100100FF);
+        this->screenFlashTimer = 4;
+        gSaveContext.sohStats.timestamp[TIMESTAMP_DEFEAT_GANONDORF] = GAMEPLAYSTAT_TOTAL_TIME;
+    }
+
 }
 
 void BossGanon_Destroy(Actor* thisx, PlayState* play) {
