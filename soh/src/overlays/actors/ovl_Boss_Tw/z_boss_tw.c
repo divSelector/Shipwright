@@ -530,7 +530,7 @@ void BossTw_Init(Actor* thisx, PlayState* play2) {
         this->actor.params = TW_TWINROVA;
         sTwinrovaPtr = this;
 
-        if (Flags_GetClear(play, play->roomCtx.curRoom.num)) {
+        if (Flags_GetClear(play, play->roomCtx.curRoom.num) || CVarGetInteger("gSkipBossFights", 0)) {
             // twinrova has been defeated.
             Actor_Kill(&this->actor);
             Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, ACTOR_DOOR_WARP1, 600.0f, 230.0f, 0.0f, 0,

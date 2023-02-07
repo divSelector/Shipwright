@@ -301,7 +301,7 @@ void BossGanondrof_Init(Actor* thisx, PlayState* play) {
     Collider_SetCylinder(play, &this->colliderBody, &this->actor, &sCylinderInitBody);
     Collider_SetCylinder(play, &this->colliderSpear, &this->actor, &sCylinderInitSpear);
     this->actor.flags &= ~ACTOR_FLAG_0;
-    if (Flags_GetClear(play, play->roomCtx.curRoom.num)) {
+    if (Flags_GetClear(play, play->roomCtx.curRoom.num) || CVarGetInteger("gSkipBossFights", 0)) {
         Actor_Kill(&this->actor);
         Actor_Spawn(&play->actorCtx, play, ACTOR_DOOR_WARP1, GND_BOSSROOM_CENTER_X, GND_BOSSROOM_CENTER_Y,
                     GND_BOSSROOM_CENTER_Z, 0, 0, 0, WARP_DUNGEON_ADULT, true);

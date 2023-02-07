@@ -633,7 +633,7 @@ void BossVa_Init(Actor* thisx, PlayState* play2) {
         case BOSSVA_BODY:
             Actor_SpawnAsChild(&play->actorCtx, &this->actor, play, ACTOR_BOSS_VA, 0.0f, 80.0f, 400.0f, 0, 0,
                                0, BOSSVA_DOOR);
-            if (Flags_GetClear(play, play->roomCtx.curRoom.num)) {
+            if (Flags_GetClear(play, play->roomCtx.curRoom.num) || CVarGetInteger("gSkipBossFights", 0)) {
                 warpId = ACTOR_EN_RU1;
                 if (gSaveContext.eventChkInf[3] & 0x80) {
                     warpId = ACTOR_DOOR_WARP1;
