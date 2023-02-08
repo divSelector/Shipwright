@@ -6089,7 +6089,7 @@ void func_8083DFE0(Player* this, f32* arg1, s16* arg2) {
             }
         }
 
-        if (CVarGetInteger("gMMBunnyHood", 0) == 1 && this->currentMask == PLAYER_MASK_BUNNY) {
+        if (CVarGetInteger("gMMBunnyHood", 0) == 1 && this->currentMask != PLAYER_MASK_NONE) {
             maxSpeed *= 1.5f;
         } 
         
@@ -7727,7 +7727,7 @@ void func_80842180(Player* this, PlayState* play) {
                 }
             }
 
-            if (CVarGetInteger("gMMBunnyHood", 0) && this->currentMask == PLAYER_MASK_BUNNY) {
+            if (CVarGetInteger("gMMBunnyHood", 0) && this->currentMask != PLAYER_MASK_NONE) {
                 sp2C *= 1.5f;
             } 
             
